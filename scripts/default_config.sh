@@ -54,6 +54,8 @@ function customize_image() {
         vim \
         nano \
         less
+        openssh-server
+        
 
     # purge
     apt-get purge -y \
