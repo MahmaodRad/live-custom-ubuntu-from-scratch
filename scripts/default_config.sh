@@ -53,7 +53,7 @@ function customize_image() {
         curl \
         vim \
         nano \
-        less
+        less  \
         openssh-server
         
 
