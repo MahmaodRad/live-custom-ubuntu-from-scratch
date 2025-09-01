@@ -20,10 +20,21 @@ jobs:
           sed -i -E 's/TARGET_UBUNTU_VERSION=(.*)/TARGET_UBUNTU_VERSION="jammy"/g' default_config.sh
           ./build.sh -
           cd ..
-      - name: Archive artifacts
+
       - uses: actions/download-artifact@v4
+        name: "Download Node Modules - v4"
         with:
-          name: ubuntu-from-scratch
-          path: |
-            scripts/ubuntu-from-scratch.iso
-            scripts/image/md5sum.txt
+          name: ubuntu.iso
+          path: scripts/ubuntu-from-scratch.iso
+      - uses: actions/download-artifact@v4
+        name: "Download Node Modules - v4"
+        with:
+          name: ubuntu.md5.txt
+          path: scripts/image/md5sum.txt
+     # - name: Archive artifacts
+     # - uses: actions/download-artifact@v4
+     #   with:
+     #     name: ubuntu-from-scratch
+     #     path: |
+     #       scripts/ubuntu-from-scratch.iso
+    #        scripts/image/md5sum.txt
